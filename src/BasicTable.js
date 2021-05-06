@@ -1,63 +1,21 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
-import './BasicTable.scss'
+import BasicTable2 from './BasicTable2';
 
-const useStyles = makeStyles({
-    table: {
-        minWidth: 650,
-    },
-});
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
+
+
+
 
 export default function BasicTable({ countryWeather, text }) {
-    const classes = useStyles();
-
-    return (
-        <Container>
-        <TableContainer className='result-table' component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell> {text.slice(0,1).toUpperCase() + text.slice(1)}( { `Description: ${countryWeather.description}` } )</TableCell>
-                        <TableCell align="right">Temperature</TableCell>
-                        <TableCell align="right">Wind&nbsp;</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            Today
-              </TableCell>
-                        <TableCell align="right">{countryWeather.temperature}</TableCell>
-                        <TableCell align="right">{countryWeather.wind}</TableCell>
-                    </TableRow>
-                    {
-                        countryWeather ?
-                            countryWeather.forecast.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">
-                                        Day {row.day}
-                                    </TableCell>
-                                    <TableCell align="right">{row.temperature}</TableCell>
-                                    <TableCell align="right">{row.wind}</TableCell>
-                                </TableRow>
-                            ))
-                            : null
-                    }
-                </TableBody>
-            </Table>
-        </TableContainer>
-        </Container>
-    );
+    if(countryWeather !== undefined) {
+        console.log('jdfhjshfd');
+        console.log(countryWeather);
+        return (
+            <BasicTable2 countryWeather={countryWeather} text={text} />
+        );
+    }else {
+        return null;
+    }
+        
+    
 }

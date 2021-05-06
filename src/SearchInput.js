@@ -23,7 +23,7 @@ export default function SearchInput({ onSearch }) {
           e.preventDefault();
           onSearch(text);
           setText("");
-        }} type='submit' variant="contained" color='primary'>Default</Button>
+        }} type='submit' variant="contained" color='primary'>get weather</Button>
         </FormControl>
         </form>
       </div>
