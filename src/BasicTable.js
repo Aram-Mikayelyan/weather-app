@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BasicTable2 from './BasicTable2';
 
-
+let isRender = false;
 
 
 
 
 export default function BasicTable({ countryWeather, text }) {
+
+    useEffect(() => {
+        isRender = true;
+    }, []);
+    
     if(countryWeather !== undefined) {
-        console.log('jdfhjshfd');
-        console.log(countryWeather);
         return (
             <BasicTable2 countryWeather={countryWeather} text={text} />
         );
     }else {
-        return null;
+         
+        
     }
         
     

@@ -27,7 +27,6 @@ function App() {
             getWeather(text);
           } catch (err) {
             setState({forecast: []});
-            console.l0g('aram');
           }
           
         }}
