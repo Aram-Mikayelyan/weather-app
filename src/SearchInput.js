@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import {Input, FormControl, Button, InputLabel } from '@material-ui/core';
 import './inputForm.scss';
+
+
+
 export default function SearchInput({ onSearch }) {
 
   const [text, setText] = useState("");
