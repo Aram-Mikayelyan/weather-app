@@ -39,7 +39,7 @@ export default function BasicTable2({ countryWeather, text }) {
                             <TableCell component="th" scope="row">
                                 Today
                         </TableCell>
-                            <TableCell align="right">{countryWeather.temperature}</TableCell>
+                            <TableCell align="right">{countryWeather.temperature.startsWith('+') ? countryWeather.temperature : '+' + countryWeather.temperature}</TableCell>
                             <TableCell align="right">{countryWeather.wind}</TableCell>
                         </TableRow>
                         {
@@ -49,7 +49,7 @@ export default function BasicTable2({ countryWeather, text }) {
                                         <TableCell component="th" scope="row">
                                             Day {day.day}
                                         </TableCell>
-                                        <TableCell align="right">{day.temperature}</TableCell>
+                                        <TableCell align="right">{day.temperature.startsWith('+') ? day.temperature : '+' + day.temperature}</TableCell>
                                         <TableCell align="right">{day.wind}</TableCell>
                                     </TableRow>
                                 ))

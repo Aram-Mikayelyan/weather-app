@@ -12,8 +12,10 @@ function App() {
     const response = await fetch(`https://goweather.herokuapp.com/weather/${text}`);
     const countryWeather = await response.json();
     if(countryWeather.temperature === '') {
-       setState();
-       setCityState();
+      console.log(countryWeather.temperature);
+       setState(null);
+       setCityState(null);
+       setState(null);
     }else
     setState(countryWeather);
   }
