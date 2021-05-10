@@ -45,7 +45,7 @@ export default function BasicTable2({ countryWeather, text }) {
                         {
                             countryWeather ?
                                 countryWeather.forecast.map((day) => (
-                                    <TableRow key={day.name}>
+                                    <TableRow key={day.day}>
                                         <TableCell component="th" scope="row">
                                             Day {day.day}
                                         </TableCell>
